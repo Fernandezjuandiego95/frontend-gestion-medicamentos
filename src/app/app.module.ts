@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { ProductoFormComponent } from './pages/productos/producto-form.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
@@ -32,7 +32,6 @@ import { MenubarModule } from 'primeng/menubar';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     ProductosComponent,
     ProductoFormComponent,
     ProveedoresComponent,
@@ -45,6 +44,7 @@ import { MenubarModule } from 'primeng/menubar';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -67,3 +67,9 @@ import { MenubarModule } from 'primeng/menubar';
 })
 export class AppModule { }
 
+
+
+
+    
+   
+  

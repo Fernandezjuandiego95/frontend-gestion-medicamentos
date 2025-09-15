@@ -16,7 +16,7 @@ export class LayoutComponent implements OnInit {
     this.items = [
       { label: 'Productos', icon: 'pi pi-box', routerLink: '/productos' },
       { label: 'Proveedores', icon: 'pi pi-users', routerLink: '/proveedores' },
-      { label: 'Recepciones', icon: 'pi pi-truck', routerLink: '/recepciones' }
+      { label: 'Recepciones', icon: 'pi pi-bell', routerLink: '/recepciones' }
     ];
   }
 
