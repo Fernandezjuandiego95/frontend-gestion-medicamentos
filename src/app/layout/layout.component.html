@@ -1,0 +1,16 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <h2 style="margin:0; color:#007ad9;">Gestión De Medicamentos</h2>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <button pButton label="Salir" icon="pi pi-sign-out"
+        class="p-button-danger"
+        (click)="logout()">
+    </button>
+
+  </ng-template>
+</p-menubar>
+
+<div class="layout-content">
+  <router-outlet></router-outlet>
+</div>

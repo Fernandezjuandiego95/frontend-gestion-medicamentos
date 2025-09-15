@@ -1,0 +1,27 @@
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid">
+  <label>Código</label>
+  <input pInputText formControlName="codigo">
+
+  <label>Nombre</label>
+  <input pInputText formControlName="nombre">
+
+  <label>Laboratorio</label>
+  <input pInputText formControlName="laboratorio">
+
+   <label>Estado</label>
+  <p-dropdown 
+    [options]="[
+      {label: 'Activo', value: 'Activo'},
+      {label: 'Inactivo', value: 'Inactivo'}
+    ]"
+    formControlName="estado">
+  </p-dropdown>
+
+  <label>Descripción</label>
+  <input pInputText formControlName="descripcion">
+
+  <div style="text-align:right;margin-top:8px">
+    <button pButton label="Guardar" type="submit"></button>
+  </div>
+</form>

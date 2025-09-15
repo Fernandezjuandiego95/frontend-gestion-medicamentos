@@ -1,0 +1,33 @@
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid">
+  <label>Tipo ID</label>
+  <p-dropdown 
+    [options]="[
+      {label: 'Cédula de ciudadania', value: 'CC'},
+      {label: 'NIT', value: 'NIT'},
+      {label: 'Cédula de extranjeria', value: 'CE'},
+      {label: 'NIT de extranjeria', value: 'NIT Extranjeria'}
+    ]"
+    formControlName="tipo_identificacion">
+  </p-dropdown>
+
+  <label>Número de identificacion</label>
+  <input pInputText formControlName="numero_identificacion">
+
+  <label>Razón social</label>
+  <input pInputText formControlName="razon_social">
+
+  <label>Nombre de contacto</label>
+  <input pInputText formControlName="nombre_contacto">
+
+  <label>Numero celular</label>
+  <input pInputText formControlName="celular">
+
+  <label>Dirección</label>
+  <input pInputText formControlName="direccion">
+
+  <label>Actividad economica</label>
+  <input pInputText formControlName="actividad_economica">
+
+  <div style="text-align:right;margin-top:8px"><button pButton label="Guardar" type="submit"></button></div>
+</form>

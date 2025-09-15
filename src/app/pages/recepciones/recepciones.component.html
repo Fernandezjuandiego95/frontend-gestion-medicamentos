@@ -1,0 +1,43 @@
+<p-toolbar>
+  <div class="p-toolbar-group-left"><h3>Recepciones</h3></div>
+  <div class="p-toolbar-group-right"><button pButton label="Nuevo" (click)="nuevo()"></button></div>
+</p-toolbar>
+<p-card>
+  <p-table [value]="recepciones">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Proveedor</th>
+        <th>Fecha recepcion</th>
+        <th>Numero factura</th>
+        <th>Cantidad</th>
+        <th>Lote</th>
+        <th>Registro INVIMA</th>
+        <th>Fecha vencimiento</th>
+        <th>Descripcion</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-r>
+      <tr>
+        <td>{{r.id}}</td>
+        <td>{{r.producto}}</td>
+        <td>{{r.proveedor}}</td>
+        <td>{{r.fecha_hora | date:'dd/MM/yyyy HH:mm'}}</td>
+        <td>{{r.numero_factura}}</td>
+        <td>{{r.cantidad}}</td>
+        <td>{{r.lote}}</td>
+        <td>{{r.registro_invima}}</td>
+        <td>{{r.fecha_vencimiento}}</td>
+        <td>{{r.descripcion_estado_producto}}</td>
+        <td>
+         <button pButton icon="pi pi-pencil" class="p-button-text" (click)="edit(r)"></button>
+         <button pButton icon="pi pi-trash" class="p-button-danger" (click)="delete(r)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
+<p-dialog header="Recepción" [(visible)]="display" [modal]="true"><app-recepcion-form [recepcion]="selected" [productos]="productos" [proveedores]="proveedores" (saved)="onSaved()"></app-recepcion-form></p-dialog>

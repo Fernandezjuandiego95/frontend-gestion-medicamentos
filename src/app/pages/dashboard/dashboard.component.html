@@ -1,0 +1,12 @@
+<div class="layout-wrapper">
+  <div class="sidebar">
+    <h3>Medicamentos</h3>
+    <button pButton label="Dashboard" class="p-mb-2" (click)="router.navigate(['/'])"></button>
+    <button pButton label="Productos" class="p-mb-2" (click)="router.navigate(['/productos'])"></button>
+    <button pButton label="Proveedores" class="p-mb-2" (click)="router.navigate(['/proveedores'])"></button>
+    <button pButton label="Recepciones" class="p-mb-2" (click)="router.navigate(['/recepciones'])"></button>
+    <hr/>
+    <button pButton label="Cerrar sesión" class="p-button-danger" (click)="logout()"></button>
+  </div>
+  <div class="content"><router-outlet></router-outlet></div>
+</div>
