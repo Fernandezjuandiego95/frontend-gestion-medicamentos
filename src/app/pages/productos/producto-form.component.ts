@@ -19,6 +19,25 @@ export class ProductoFormComponent implements OnChanges {
     }); 
   }
   
-  ngOnChanges(){ if(this.producto) this.form.patchValue(this.producto); else this.form.reset({estado:'Activo'}); }
-  submit(){ if(this.form.invalid) { this.form.markAllAsTouched(); return; } const data=this.form.value; if(data.id) this.svc.actualizar(data).subscribe(()=>this.saved.emit()); else this.svc.registrar(data).subscribe(()=>this.saved.emit()); }
+  ngOnChanges(){ 
+    if(this.producto) this.form.patchValue(this.producto); 
+    else this.form.reset({estado:'Activo'}); 
+  }
+  
+  submit(){ 
+    if(this.form.invalid) { this.form.markAllAsTouched(); return; }
+     const data=this.form.value; 
+      if (data.id) {
+      this.svc.actualizar(data).subscribe(() => {
+        this.saved.emit();
+        this.form.reset({ estado: 'Activo' });
+      });
+    } else {
+      this.svc.registrar(data).subscribe(() => {
+        this.saved.emit();
+        this.form.reset({ estado: 'Activo' });
+      });
+    }
+  }
+
 }

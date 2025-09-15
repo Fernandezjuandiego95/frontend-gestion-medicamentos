@@ -21,8 +21,20 @@ export class RecepcionFormComponent implements OnChanges {
       id_proveedor:[null,Validators.required] }); }
   
   ngOnChanges(){ if(this.recepcion) this.form.patchValue(this.recepcion); else this.form.reset(); }
+ 
   submit(){ if(this.form.invalid){ this.form.markAllAsTouched(); return;} 
   const data=this.form.value; 
-  if(data.id) this.svc.actualizar(data).subscribe(()=>this.saved.emit()); 
-  else this.svc.registrar(data).subscribe(()=>this.saved.emit()); }
+  
+    if (data.id) {
+      this.svc.actualizar(data).subscribe(() => {
+        this.saved.emit();
+        this.form.reset();
+      });
+    } else {
+      this.svc.registrar(data).subscribe(() => {
+        this.saved.emit();
+        this.form.reset();
+      });
+    }
+  }
 }

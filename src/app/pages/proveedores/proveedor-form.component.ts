@@ -22,6 +22,16 @@ export class ProveedorFormComponent implements OnChanges {
   submit(){ 
     if(this.form.invalid) { this.form.markAllAsTouched(); return; } 
     const data=this.form.value; 
-    if(data.id) this.svc.actualizar(data).subscribe(()=>this.saved.emit()); 
-    else this.svc.registrar(data).subscribe(()=>this.saved.emit()); }
+    if (data.id) {
+      this.svc.actualizar(data).subscribe(() => {
+        this.saved.emit();
+        this.form.reset();
+      });
+    } else {
+      this.svc.registrar(data).subscribe(() => {
+        this.saved.emit();
+        this.form.reset();
+      });
+    }
+  }
 }
