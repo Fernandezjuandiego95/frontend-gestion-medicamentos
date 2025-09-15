@@ -1,22 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid">
-
-  <label>Numero factura</label>
-  <input pInputText formControlName="numero_factura">
-
-  <label>Cantidad</label>
-  <input type="number" pInputText formControlName="cantidad">
-
-  <label>Lote</label>
-  <input pInputText formControlName="lote">
-
-  <label>Registro INVIMA</label>
-  <input pInputText formControlName="registro_invima">
-
-  <label>Fecha de Vencimiento</label>
-  <input type="date" pInputText formControlName="fecha_vencimiento">
-
-  <label>Descripción del estado del producto</label>
-  <input pInputText formControlName="descripcion_estado_producto">
+<form [formGroup]="form" (ngSubmit)="submit()" class="p-fluid  p-field">
 
   <label>Producto</label>
   <p-dropdown 
@@ -35,6 +17,24 @@
     formControlName="id_proveedor"
     placeholder="--Seleccione el proveedor--">
   </p-dropdown>
+
+  <label>Numero factura</label>
+  <input pInputText formControlName="numero_factura">
+
+  <label>Cantidad</label>
+  <input type="number" pInputText formControlName="cantidad">
+
+  <label>Lote</label>
+  <input pInputText formControlName="lote">
+
+  <label>Registro INVIMA</label>
+  <input pInputText formControlName="registro_invima">
+
+  <label>Fecha de Vencimiento</label>
+  <input type="date" pInputText formControlName="fecha_vencimiento">
+
+  <label>Descripción del estado del producto</label>
+  <input pInputText formControlName="descripcion_estado_producto">
 
   <div style="text-align:right;margin-top:8px">
     <button pButton label="Guardar" type="submit"></button>

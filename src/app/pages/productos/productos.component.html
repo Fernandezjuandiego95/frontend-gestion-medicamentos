@@ -36,6 +36,6 @@
   </p-table>
 </p-card>
 
-<p-dialog header="Producto" [(visible)]="display" [modal]="true">
+<p-dialog header="Producto" [(visible)]="display" [modal]="true" [style]="{ width: '60%' }">
   <app-producto-form [producto]="selected" (saved)="onSaved()"></app-producto-form>
 </p-dialog>

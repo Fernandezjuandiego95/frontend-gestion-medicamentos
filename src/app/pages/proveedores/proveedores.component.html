@@ -37,4 +37,6 @@
   </ng-template>
   </p-table>
 </p-card>
-<p-dialog header="Proveedor" [(visible)]="display" [modal]="true"><app-proveedor-form [proveedor]="selected" (saved)="onSaved()"></app-proveedor-form></p-dialog>
+<p-dialog header="Proveedor" [(visible)]="display" [modal]="true" [style]="{ width: '60%' }">
+  <app-proveedor-form [proveedor]="selected" (saved)="onSaved()"></app-proveedor-form>
+</p-dialog>

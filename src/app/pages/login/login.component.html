@@ -1,10 +1,15 @@
-<div style="height:100vh; display:flex; align-items:center; justify-content:center;">
-  <div style="width:380px; background:white; padding:1.5rem; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08)">
-    <h2>Iniciar sesión</h2>
+
+<div class="content-login">
+  <div class="content-input">
+    <h2 class="h2-login">Iniciar sesión <i class="pi pi-sign-in"></i></h2>
     <div class="p-fluid">
-      <label>Usuario</label><input pInputText [(ngModel)]="username" />
-      <label style="margin-top:0.5rem">Contraseña</label><input type="password" pInputText [(ngModel)]="password" />
-      <div style="margin-top:1rem"><button pButton label="Entrar" (click)="submit()"></button></div>
+      <label>Usuario</label>
+      <input pInputText [(ngModel)]="username" />
+      
+      <label>Contraseña</label>
+      <input type="password" pInputText [(ngModel)]="password" />
+
+      <div class="div-button"><button pButton label="Ingresar" (click)="submit()"></button></div>
     </div>
   </div>
 </div>

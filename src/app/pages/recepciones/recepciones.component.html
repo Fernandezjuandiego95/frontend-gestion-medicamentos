@@ -40,4 +40,6 @@
     </ng-template>
   </p-table>
 </p-card>
-<p-dialog header="Recepción" [(visible)]="display" [modal]="true"><app-recepcion-form [recepcion]="selected" [productos]="productos" [proveedores]="proveedores" (saved)="onSaved()"></app-recepcion-form></p-dialog>
+<p-dialog header="Recepción" [(visible)]="display" [modal]="true" [style]="{ width: '60%' }">
+  <app-recepcion-form [recepcion]="selected" [productos]="productos" [proveedores]="proveedores" (saved)="onSaved()"></app-recepcion-form>
+</p-dialog>
